@@ -7,6 +7,7 @@ defmodule Forum.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Forum.Auth, repo: Forum.Repo
   end
 
   pipeline :api do
@@ -14,15 +15,10 @@ defmodule Forum.Router do
   end
 
   scope "/", Forum do
-    pipe_through :browser # Use the default browser stack
-    get "/users",     UserController, :index
-    get "/users/:id", UserController, :show
+    pipe_through :browser
 
     get "/", PageController, :index
+    resources "/users",    UserController, only: [:index, :show, :new, :create]
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Forum do
-  #   pipe_through :api
-  # end
 end
