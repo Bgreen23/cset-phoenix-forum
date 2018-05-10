@@ -5,6 +5,7 @@ defmodule Forum.Post do
     field :title, :string
     field :content, :string
     belongs_to :user, Forum.User
+    belongs_to :category, Forum.Category
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule Forum.Post do
   """
   def changeset(struct, params \\ :invalid) do
     struct
-    |> cast(params, [:title, :content])
+    |> cast(params, [:title, :content, :category_id])
     |> validate_required([:title, :content])
   end
 end

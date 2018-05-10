@@ -17,6 +17,10 @@
     <%= @post.content %>
   </li>
 
+  <li>
+    <strong>Category:</strong>
+    <%= @category.content %>
+  </li>
 </ul>
 
 <%= link "Edit", to: post_path(@conn, :edit, @post) %>

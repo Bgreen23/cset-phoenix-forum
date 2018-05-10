@@ -6,8 +6,6 @@
       <th>User</th>
       <th>Title</th>
       <th>Content</th>
-
-      <th></th>
     </tr>
   </thead>
   <tbody>

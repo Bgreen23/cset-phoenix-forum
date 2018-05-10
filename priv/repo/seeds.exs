@@ -9,3 +9,9 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Forum.Repo
+alias Forum.Category
+
+for category <- ~w(General Anime Sports Life Education) do
+  Repo.insert!(%Category{name: category})
+end
