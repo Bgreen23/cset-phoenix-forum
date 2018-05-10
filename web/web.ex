@@ -32,10 +32,11 @@ defmodule Forum.Web do
 
       alias Forum.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query,  only: [from: 1, from: 2]
 
       import Forum.Router.Helpers
       import Forum.Gettext
+      import Forum.Auth, only: [authenticate_user: 2]
     end
   end
 
@@ -60,6 +61,8 @@ defmodule Forum.Web do
   def router do
     quote do
       use Phoenix.Router
+      
+      import Forum.Auth, only: [authenticate_user: 2]
     end
   end
 
