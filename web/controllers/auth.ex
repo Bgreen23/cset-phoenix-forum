@@ -46,7 +46,7 @@ defmodule Forum.Auth do
       conn
     else
       conn
-      |> put_flash(:error, "You must be logged in to access that page")
+      |> put_flash(:error, "Hey now! I'm gonna need to see some log-in credentials.")
       |> redirect(to: Helpers.page_path(conn, :index))
       |> halt()
     end

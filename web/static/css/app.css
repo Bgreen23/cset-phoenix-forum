@@ -1,1 +1,19 @@
 /* This file is for your main application css. */
+
+.background{
+  background-color: lightslategray;
+}
+.list{
+  color: floralwhite;
+  line-height: 2;
+  font-size: 15px;
+
+}
+.list a{
+  margin-left: 100%;
+  color: floralwhite;
+}
+.table-content{
+  color: floralwhite;
+  display: flex;  
+}
