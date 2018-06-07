@@ -14,8 +14,8 @@ defmodule Forum.PostController do
       Category
       |> Category.alphabetical
       |> Category.names_and_ids
-      categories = Repo.all query
-      assign(conn, :categories, categories)
+    categories = Repo.all query
+    assign(conn, :categories, categories)
   end
 
   def action(conn, _) do

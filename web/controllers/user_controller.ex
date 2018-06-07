@@ -5,8 +5,8 @@ defmodule Forum.UserController do
   plug :authenticate_user when action in [:index, :show]
 
   def index(conn, _params) do
-      users = Repo.all(User)
-      render conn, "index.html", users: users
+    users = Repo.all(User)
+    render conn, "index.html", users: users
   end
 
   def show(conn, %{"id" => id}) do
